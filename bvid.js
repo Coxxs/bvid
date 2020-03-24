@@ -1,7 +1,7 @@
 var bvid = (function () {
   var table = 'fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF'
   var tr = {}
-  for (let i = 0; i < 58; i++) {
+  for (var i = 0; i < 58; i++) {
     tr[table[i]] = i
   }
   var s = [11, 10, 3, 8, 4, 6]
@@ -13,8 +13,8 @@ var bvid = (function () {
     if (x.length !== 12 || (x[0] + x[1] + x[2] + x[5] + x[7] + x[9]).toUpperCase() !== r.join('')) {
       return null
     }
-    let result = 0
-    for (let i = 0; i < 6; i++) {
+    var result = 0
+    for (var i = 0; i < 6; i++) {
       result += tr[x[s[i]]] * (58 ** i)
     }
     result = ((result - add) ^ xor)
@@ -27,8 +27,8 @@ var bvid = (function () {
       return null
     }
     x = (x ^ xor) + add
-    let result = r.slice()
-    for (let i = 0; i < 6; i++) {
+    var result = r.slice()
+    for (var i = 0; i < 6; i++) {
       result[s[i]] = table[Math.floor(x / 58 ** i) % 58]
     }
     return result.join('')
