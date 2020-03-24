@@ -1,0 +1,19 @@
+{
+  "name": "bvid",
+  "version": "1.0.4",
+  "description": "",
+  "main": "bvid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coxxs/bvid.git"
+  },
+  "author": "Coxxs",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Coxxs/bvid/issues"
+  },
+  "homepage": "https://github.com/Coxxs/bvid#readme"
+}
