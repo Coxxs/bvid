@@ -15,7 +15,7 @@ var bvid = (function () {
     }
     var result = 0
     for (var i = 0; i < 6; i++) {
-      result += tr[x[s[i]]] * (58 ** i)
+      result += tr[x[s[i]]] * Math.pow(58, i)
     }
     result = ((result - add) ^ xor)
     return result > 0 && result < 1e9 ? result : null
@@ -29,12 +29,12 @@ var bvid = (function () {
     x = (x ^ xor) + add
     var result = r.slice()
     for (var i = 0; i < 6; i++) {
-      result[s[i]] = table[Math.floor(x / 58 ** i) % 58]
+      result[s[i]] = table[Math.floor(x / Math.pow(58, i)) % 58]
     }
     return result.join('')
   }
 
-  return { encode, decode }
+  return { encode: encode, decode: decode }
 })()
 
 if (typeof module !== 'undefined' && module != null) {
